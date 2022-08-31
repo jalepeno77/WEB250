@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
-</html>
+<?php
+
+function check_capacity( $capacity, $attendees = 0 ) if ( $attendees < $capacity ) {
+  return 'There are still tickets available.';
+}
+
+return 'This event is sold out.';
+}
+
+// Array: key => [capacity, attendees];
+$venues = array( 
+	'Cantina' => [100, 20], //Droids not included.
+	'Dorsia' => [74, 74], 
+	'The Max'=> [98, 100], 
+	'MacLaren\'s' => [53, 127],
+	'The Banana Stand' => [2, 0],
+);
+
+foreach ( $venues as $name => $numbers ) {
+	echo $name . ' - ' . check_capacity($numbers[0], $numbers[1]) . '<br/>';
+}
