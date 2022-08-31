@@ -12,6 +12,7 @@ while ($i <= 100) {
     } else {
         echo $i;
     }
+  }
 
     echo '<br/>';
     $i++;

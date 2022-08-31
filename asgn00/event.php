@@ -1,6 +1,7 @@
 <?php
 
-function check_capacity( $capacity, $attendees = 0 ) if ( $attendees < $capacity ) {
+function check_capacity( $capacity, $attendees = 0 ) {
+  if ( $attendees < $capacity ) {
   return 'There are still tickets available.';
 }
 
