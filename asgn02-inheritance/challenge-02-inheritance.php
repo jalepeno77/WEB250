@@ -7,7 +7,7 @@ class Ships {
   public $occupancy;
   public $speed;
 
-  function info() {
+  public function info() {
     return $this->name . ", " . $this->color . ", " . $this->occupancy . ", " . $this->speed;
   }
 }
@@ -15,14 +15,17 @@ class Ships {
 class UnderwaterShips extends Ships {
 public $torpedo;
 public $oxygenTanks;
-function specs() {
+private function specs() {
   return $this->torpedo . ", " . $this->oxygenTanks;
   }
 }
 
 class BattleShips extends Ships {
-public $aircrafts;
-public $controlTower;
+private $aircrafts;
+private $controlTower;
+private function cap() {
+  return $this->aircrafts . ", " . $this->controlTower;
+  }
 }
 
 $a = new Ships;
